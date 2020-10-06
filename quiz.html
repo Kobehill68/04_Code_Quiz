@@ -9,8 +9,27 @@
 </head>
 <body>
     <div class="timer">Time: <span id="time">0</span></div>
-    <main class="container"> 
-        
+
+    <main class="container">
+        <div class="row">
+            <div id="start-screen">
+                <h2 style ="text-align: center;">Welcome to the Coding Quiz!</h2>
+                <h4  style ="text-align: center;">Are you ready?</h4>
+                <p style="font-family: cursive">Answer the following coding question within the given time limit. But remember if you answer incorectly that ten seconds gone.</p>
+                <button type="button" class="btn btn-primary" id="start">Start Quiz!</button>
+            </div> 
+        </div>
+        <div id="questions" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        <div id="end-page" class="hide">
+            <h2>The Quiz is Done</h2>
+            <p>Your Score is <span id="final-score"></span>.</p>
+            <p>Initials Please: <input type="text" id="initials" max="4"/>
+               <button type="button" class=" btn btn-primary" id="submit">Submit</button> 
+        </div>
     </main>
 
     <script src = "./questions.js"></script>
