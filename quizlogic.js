@@ -75,11 +75,11 @@ function theQuestion() {
 
 
 
-function theChoices() {
-   
-    UlElement() 
+function theChoices() { 
+    UlElement();
+
     for (var i = 0; i < questionsArray[title].choices.length; i++) {
-        var choices = questionsArray[title].choices[i];
+        var choices = questionsArray[title].choices[0];
 
         var li = document.createElement("li");
         li.textContent = choices;
