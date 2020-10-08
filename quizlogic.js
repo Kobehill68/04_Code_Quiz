@@ -1,6 +1,6 @@
 var timeElement = document.getElementById("time");
 var startButton = document.getElementById("startQuiz");
-var questionsElement = document.getElementById("questions");
+var questionsElement = document.getElementById("theQuestions");
 var uLContainer = document.getElementById("ul-container");
 var choicesListUl = document.getElementById("choices-list");
 
@@ -14,25 +14,25 @@ var answer = "";
 var questionsArray = [
 
     {
-        title: "What does CSS stand for?",
+        question: "What does CSS stand for?",
         choices: ["Color Style Sheet", "Cascading Style Sheets", "Cascading Sheets Style",],
         answer: "Cascading Style Sheets",
     },
 
     {
-        title: "How do you define variables in javascript?",
+        question: "How do you define variables in javascript?",
         choices: ["var", "VAR", "<var>",],
         answer: "var",
     },
 
     {
-        title: "Who Invented JavaScript?",
+        question: "Who Invented JavaScript?",
         choices: ["Bill Gates", "Brendan Eirch", "Kobe Hill",],
         answer: "Brendan Eirch",
     },
 
     {
-        title: "How do you make a for Loop?",
+        question: "How do you make a for Loop?",
         choices: ["For=loop", "for()", "none of the above",],
         answer: "for()",
     },
@@ -44,7 +44,7 @@ var questionsArray = [
 
 function startQuiz() {
     timeLeft = 60;
-    question = 0;
+    title = 0;
     userScore = 0;
     setTime();
     theQuestion();
@@ -65,32 +65,32 @@ function setTime() {
 };
 
 function theQuestion() {
-    if (questions < questionsArray.length) {
-        questionsElement.textContent = questionsArray[title].questions;
+    if (title < questionsArray.length) {
+        questionsElement.textContent = questionsArray[title].question;
         answer = questionsArray[title].answer;
         theChoices();
-    };
+    }
 };
 
 
 
 
 function theChoices() {
-    appendUlEl();
+   
 
     for (var i = 0; i < questionsArray[title].choices.length; i++) {
         var choices = questionsArray[title].choices[i];
 
         var li = document.createElement("li");
         li.textContent = choices;
-        choicesListUl.appendChild(li);
+        choicesListUl.appendChild(choices);
 
-    };
+    }
 
 };
 
 
-function appendUlEl() {
+function UlElement() {
     choicesListUl = document.createElement("ul");
     choicesListUl.setAttribute("id", "choices-list");
     document.getElementById("ul-container").appendChild(choicesListUl);
@@ -107,7 +107,7 @@ function answerCheck(userChooses) {
         timeLeft -= 10
     }
 
-    questions++;
+    title++;
 };
 
 function quizEnded() {
@@ -121,10 +121,9 @@ function quizEnded() {
 startButton.addEventListener("click", startQuiz);
 
 
-uLContainerElement.addEventListener("click", function (event) {
-    answerCheck(event.target.trim());
-    removeUlEl();
-    theQuestions();
-
-})
+//uLContainerElement.addEventListener("click", function (event) {
+   // answerCheck(event.target.trim());
+    //removeUlEl();
+    //theQuestions();
+//})
 
