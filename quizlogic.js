@@ -79,7 +79,7 @@ function theChoices() {
     UlElement();
 
     for (var i = 0; i < questionsArray[title].choices.length; i++) {
-        var choices = questionsArray[title].choices[0];
+        var choices = questionsArray[title].choices[i];
 
         var li = document.createElement("li");
         li.textContent = choices;
@@ -112,7 +112,7 @@ function answerCheck(userChooses) {
 
 function quizEnded() {
     timeElement.textContent = "Quiz has Ended!";
-    questionsElement.textContent = "Your Score is" +  userScore;
+    questionsElement.textContent = "Your Score is" +  userScore + "Yay";
     removeUlEl();
 
     startButton.style.display = "inline-block";
@@ -121,9 +121,9 @@ function quizEnded() {
 startButton.addEventListener("click", startQuiz);
 
 
-//uLContainerElement.addEventListener("click", function (event) {
-   // answerCheck(event.target.trim());
-    //removeUlEl();
-    //theQuestions();
-//})
+uLContainerElement.addEventListener("click", function (event) {
+    answerCheck(event.target.trim());
+    removeUlEl();
+    theQuestions();
+});
 
