@@ -77,7 +77,7 @@ function theQuestion() {
 
 function theChoices() {
    
-
+    UlElement() 
     for (var i = 0; i < questionsArray[title].choices.length; i++) {
         var choices = questionsArray[title].choices[i];
 
