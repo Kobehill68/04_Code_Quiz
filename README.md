@@ -40,8 +40,14 @@ THEN I can save my initials and score
 
 
 ## The Solution
-This project utilizes Bootstrap for the CSS styling and a single html file and a single JavaScript file.
-I am 
+This project utilizes Bootstrap for the CSS styling and a single html file and a single JavaScript file. 
+the main body of my JavaSrcipt file has all my variables and functions and at the bottum of the page has all
+my event listeners.
+
+## Gameplay
+When you hit start quiz the timer will begin to count down and the first question will pop up.
+And you will be presented with the choices . If you select the wrong answer ten seconds will be deducted and you will move on to
+the next question. If the timer runs out the quiz will end taking you the quizEnd page.  
 
 
 ## Sources
